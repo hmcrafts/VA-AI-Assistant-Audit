@@ -1,0 +1,6 @@
+{
+  "name": "VA AI Assistant Web Audits & Analytics",
+  "description": "VA Services Monitor: Comprehensive accessibility evaluations, core feature reviews, Google Analytics traffic intelligence, and Google Cloud infrastructure billing & cost analytics for Department of Veterans Affairs AI services.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

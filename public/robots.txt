@@ -1,0 +1,4 @@
+# VA Services Monitor - Public Access Enabled
+User-agent: *
+Allow: /
+

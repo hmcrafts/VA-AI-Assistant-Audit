@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  code, pre, kbd {
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+}
+
+/* ========================================================================= */
+/* PRINT & PDF EXPORT READABILITY ENHANCEMENTS                               */
+/* ========================================================================= */
+@page {
+  size: letter portrait;
+  margin: 12mm 10mm 12mm 10mm;
+}
+
+@media print {
+  html, body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 10pt !important;
+    line-height: 1.45 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Universal print resets for modal wrappers */
+  .fixed.inset-0,
+  .modal-backdrop-print-reset {
+    position: static !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    border: none !important;
+    z-index: auto !important;
+  }
+
+  .modal-print-container {
+    position: static !important;
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    border: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+  }
+
+  /* Hide UI elements that have no place on printed PDF */
+  .no-print,
+  .modal-no-print,
+  .chatbot-fab,
+  button,
+  input,
+  select,
+  textarea {
+    display: none !important;
+  }
+
+  /* If printing an active report modal, hide background app elements */
+  body:has(#va-printable-report) > div > header,
+  body:has(#va-printable-report) > div > main,
+  body:has(#va-printable-report) > div > footer {
+    display: none !important;
+  }
+
+  /* Document layout enhancements */
+  .va-print-document {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+  }
+
+  /* Prevent awkward page cuts */
+  .print-avoid-break {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .print-page-break {
+    break-before: page !important;
+    page-break-before: always !important;
+  }
+
+  /* Headers keep proximity with following content */
+  h1, h2, h3, h4, h5, h6 {
+    color: #0f172a !important;
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+
+  /* High contrast borders and tables */
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    font-size: 8.5pt !important;
+  }
+
+  tr {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  th {
+    background-color: #f1f5f9 !important;
+    color: #0f172a !important;
+    font-weight: 700 !important;
+    border-color: #94a3b8 !important;
+  }
+
+  td {
+    border-color: #cbd5e1 !important;
+    color: #1e293b !important;
+  }
+
+  /* Code block formatting */
+  pre {
+    font-size: 8.5pt !important;
+    line-height: 1.35 !important;
+    white-space: pre-wrap !important;
+    word-break: break-all !important;
+    background-color: #0f172a !important;
+    color: #f8fafc !important;
+    border: 1px solid #475569 !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Badges and tags */
+  span, div {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
